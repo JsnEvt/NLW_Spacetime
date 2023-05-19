@@ -7,6 +7,9 @@ export async function GET(request: NextRequest) {
   /* A LINHA ABAIXO, OBTEM O CODIGO DO GITHUB ATRAVES DOS PARAMETROS DA ROTA.*/
   const code = searchParams.get('code')
 
+  /* AQUI CONSIGO PEGAR O REDIRECTTO DA ROTA DE MIDDLEWARE */
+  const redirectTo = request.cookies.get('redirectTo')?.value
+
   const registerResponse = await api.post('/register', { code })
   const { token } = registerResponse.data
 
@@ -15,7 +18,9 @@ export async function GET(request: NextRequest) {
 
   /*REDIRECIONANDO*/
 
-  const redirectURL = new URL('/', request.url)
+  /* EXISTINDO A INFORMACAO DO REDIRECTTO MANDA PARA A PAGINA, CASO NEGATIVO, MANDA PARA A HOME*/
+
+  const redirectURL = redirectTo ?? new URL('/', request.url)
 
   const cookiesExpiresInSeconds = 60 * 60 * 24 * 30
 
@@ -24,6 +29,4 @@ export async function GET(request: NextRequest) {
       'Set-Cookie': `token=${token}; Path=/; max-age=${cookiesExpiresInSeconds};`,
     }
   })
-
-
 }
