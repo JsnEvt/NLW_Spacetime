@@ -27,13 +27,14 @@ export function NewMemoryForm() {
       const uploadResponse = await api.post('/upload', uploadFormData)
 
       coverUrl = uploadResponse.data.fileUrl
+
     }
     const token = Cookie.get('token')
 
     await api.post('/memories', {
       coverUrl,
       content: formData.get('content'),
-      isPublic: formData.get('isPublic')
+      isPublic: formData.get('isPublic'),
     }, {
       headers: {
         Authorization: `Bearer ${token}`
@@ -41,6 +42,7 @@ export function NewMemoryForm() {
     })
     router.push('/')
   }
+
 
 
   return (

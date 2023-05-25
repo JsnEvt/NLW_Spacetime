@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
 
   /* EXISTINDO A INFORMACAO DO REDIRECTTO MANDA PARA A PAGINA, CASO NEGATIVO, MANDA PARA A HOME*/
 
-  const redirectURL = redirectTo ?? new URL('/', request.url)
+  const redirectURL = redirectTo ?? new URL('/memories/new', request.url)
 
   const cookiesExpiresInSeconds = 60 * 60 * 24 * 30
 

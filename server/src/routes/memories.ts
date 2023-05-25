@@ -2,16 +2,21 @@ import { FastifyInstance } from 'fastify';
 import { prisma } from '../lib/prisma';
 import { z } from 'zod'
 
-export async function memoriesRoutes(app: FastifyInstance) {
-  app.get('/memories', async (request) => {
-    /* PARA QUANDO FOR NECESSARIO AUTENTICACAO NAS ROTAS, USAMOS O REQUEST NA LINHA 6 
-    ELA VERIFICA SE O TOKEN ESTA VINDO NA REQUISICAO PARA PODER LIBERAR O USO DA ROTA.
-    */
-    /*PREHANDLER - PARA USAR O HOOK EM CADA REQUISICAO E PASSANDO O JWTVERIFY COMO UM MIDDLEWARE.*/
+/* PARA QUANDO FOR NECESSARIO AUTENTICACAO NAS ROTAS, USAMOS O REQUEST NA LINHA 6 
+ELA VERIFICA SE O TOKEN ESTA VINDO NA REQUISICAO PARA PODER LIBERAR O USO DA ROTA.
+*/
+/*PREHANDLER - PARA USAR O HOOK EM CADA REQUISICAO E PASSANDO O JWTVERIFY COMO UM MIDDLEWARE.*/
 
-    app.addHook('preHandler', async (request) => {
-      await request.jwtVerify()
-    })
+// app.addHook('preHandler', async (request) => {
+//   await request.jwtVerify()
+// })
+
+export async function memoriesRoutes(app: FastifyInstance) {
+  app.addHook('preHandler', async (request) => {
+    await request.jwtVerify()
+  })
+
+  app.get('/memories', async (request) => {
 
     const memories = await prisma.memory.findMany({
       where: {
@@ -30,6 +35,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
       }
     })
   })
+
 
   app.get('/memories/:id', async (request, reply) => {
 
@@ -59,12 +65,12 @@ export async function memoriesRoutes(app: FastifyInstance) {
       isPublic: z.coerce.boolean().default(false),
     })
 
-    const { content, isPublic } = bodySchema.parse(request.body)
+    const { content, coverUrl, isPublic } = bodySchema.parse(request.body)
 
     const memory = await prisma.memory.create({
       data: {
         content,
-        coverUrl: '',
+        coverUrl,
         isPublic,
         userId: request.user.sub,
       }
