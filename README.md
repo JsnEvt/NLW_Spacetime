@@ -20,6 +20,12 @@
   O <b>NLW Spacetime - Cápsula do Tempo</b> é o projeto desenvolvido durante a <b>NLW Spacetime da Rocketseat</b>, utilizando <b>NodeJS</b> com <b>Fastify</b> e <b>React</b> com <b>NextJS 13</b>.
 </p>
 
+<div align="center">
+  <img alt="web_browser" src="https://github.com/JsnEvt/NLW_Spacetime/blob/main/img_rdme/web_browser.png">
+  <img alt="capa_mobile" src="https://github.com/JsnEvt/NLW_Spacetime/blob/main/img_rdme/capa_mobile.png">
+  <img alt="capa_mobile" src="https://github.com/JsnEvt/NLW_Spacetime/blob/main/img_rdme/adding_photo_msg.png">
+</div>
+
 
 # :information_source: Como Executar?
 
