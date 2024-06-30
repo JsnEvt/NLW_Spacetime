@@ -20,6 +20,16 @@
   O <b>NLW Spacetime - Cápsula do Tempo</b> é o projeto desenvolvido durante a <b>NLW Spacetime da Rocketseat</b>, utilizando <b>NodeJS</b> com <b>Fastify</b> e <b>React</b> com <b>NextJS 13</b>.
 </p>
 
+
+## Objetivo
+O principal objetivo da aplicação Spacetime é fornecer uma plataforma intuitiva e envolvente para que os usuários possam documentar e reviver suas memórias. Através dessa ferramenta, os usuários podem criar um diário digital interativo que serve tanto como um repositório pessoal quanto uma maneira de compartilhar suas histórias com outras pessoas.
+
+## Benefícios
+Preservação de Memórias: Ajuda os usuários a manter um registro organizado e duradouro de suas experiências.
+Facilidade de Acesso: Oferece uma maneira fácil de acessar e refletir sobre momentos passados.
+Interatividade: Promove a interação e o compartilhamento de histórias entre amigos e familiares.
+
+
 <div align="center">
   <img alt="web_browser" src="https://github.com/JsnEvt/NLW_Spacetime/blob/main/img_rdme/web_browser.png">
   <img alt="capa_mobile" src="https://github.com/JsnEvt/NLW_Spacetime/blob/main/img_rdme/capa_mobile.png">
