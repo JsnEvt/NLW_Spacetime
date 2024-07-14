@@ -29,9 +29,9 @@
 O principal objetivo da aplicação Spacetime é fornecer uma plataforma intuitiva e envolvente para que os usuários possam documentar e reviver suas memórias. Através dessa ferramenta, os usuários podem criar um diário digital interativo que serve tanto como um repositório pessoal quanto uma maneira de compartilhar suas histórias com outras pessoas.
 
 ## Benefícios
-Preservação de Memórias: Ajuda os usuários a manter um registro organizado e duradouro de suas experiências.
-Facilidade de Acesso: Oferece uma maneira fácil de acessar e refletir sobre momentos passados.
-Interatividade: Promove a interação e o compartilhamento de histórias entre amigos e familiares.
+* Preservação de Memórias: Ajuda os usuários a manter um registro organizado e duradouro de suas experiências.
+*  Facilidade de Acesso: Oferece uma maneira fácil de acessar e refletir sobre momentos passados.
+*  Interatividade: Promove a interação e o compartilhamento de histórias entre amigos e familiares.
 
 
 <div align="center">
