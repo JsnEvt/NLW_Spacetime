@@ -1,3 +1,7 @@
+<p>
+<img src=./imgs/cover.png alt="cover_spacetime">
+</p>
+
 <h1 align="center">
    NLW Spacetime - Cápsula do Tempo
 </h1>
